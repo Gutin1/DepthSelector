@@ -60,8 +60,10 @@ for (var x = xMin; x < rect.getWidth() * 128 + xMin; x++) {
       )
     )
       continue;
+      var height = dimension.getHeightAt(x, y);
+      var waterHeight = dimension.getWaterLevelAt(x, y);
     if (land) {
-      placeWater();
+      placeLayer(x, y, waterHeight, height);
     } else {
       var height = dimension.getHeightAt(x, y);
       var waterHeight = dimension.getWaterLevelAt(x, y);
