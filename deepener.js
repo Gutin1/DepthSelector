@@ -37,14 +37,9 @@ function deepen() {
     var waterDepth = waterHeight - height;
     var lowerAmount = waterDepth * multiplier;
     var newHeight = waterHeight - lowerAmount;
-
-    feedback(x, y, lowerAmount, newHeight);
+    
     dimension.setHeightAt(x, y, newHeight);
   }
-}
-
-function feedback(layer, x, y, lowerAmount, newHeight) {
-  print('Lowered ' + x + ', ' + y + ' by ' + lowerAmount + ' blocks to ' + newHeight);
 }
 
 function truncate(number) {
