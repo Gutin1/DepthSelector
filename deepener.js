@@ -29,15 +29,15 @@ for (var x = xMin; x < rect.getWidth() * 128 + xMin; x++) {
 
 print("Done!");
 
-function deepen() {
+function deepen(feedback) {
   var height = dimension.getHeightAt(x, y);
   var waterHeight = Math.ceil(dimension.getWaterLevelAt(x, y));
 
   if (waterHeight > height) {
     var waterDepth = waterHeight - height;
-    var lowerAmount = waterDepth * multiplier;
+    var lowerAmount = truncate(waterDepth) * multiplier;
     var newHeight = waterHeight - lowerAmount;
-    
+
     dimension.setHeightAt(x, y, newHeight);
   }
 }
